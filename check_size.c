@@ -2,7 +2,7 @@
 
 /**
  * check_string - checks how many characters a string has
- * @string
+ * @string: string to count
  * Return: Number of characters
  */
 
