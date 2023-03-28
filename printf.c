@@ -75,3 +75,46 @@ void _printint(void)
 		id.count++;
 	}
 }
+/**
+ * _printf - produces output according to a format
+ * @format: character string
+ * Return: number of characters printed
+ */
+
+
+int _printf(const char *format, ...)
+{
+	id.i = 0, id.j = 0, id.count = 0;
+	if (format == NULL)
+		return (-1);
+	va_start(id.args, format);
+	while (format[id.i] != '\0')
+	{
+		if (format[id.i] == '%')
+		{
+			id.i++;
+			if (format[id.i] == 'c')
+				_printchar();
+			else if (format[id.i] == 's')
+				_printstr();
+			else if (format[id.i] == 'd' || format[id.i] == 'i')
+				_printint();
+			else if (format[id.i] == '%')
+				_putchar('%');
+			else
+			{
+				_putchar('%');
+				_putchar(format[id.i]);
+				id.count += 2;
+			}
+		}
+		else
+		{
+			_putchar(format[id.i]);
+			id.count++;
+		}
+		id.i++;
+	}
+	va_end(id.args);
+	return (id.count);
+}
