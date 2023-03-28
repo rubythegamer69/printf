@@ -16,9 +16,9 @@ struct global
 } id;
 
 int _printf(const char *format, ...);
-/* add putchar here */
 void _printint(void);
 void _printchar(void);
 void _printstring(void);
+int _putchar(char c);
 
-#endif /* MAIN_H */
+#endif
