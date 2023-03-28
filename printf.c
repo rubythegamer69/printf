@@ -1,5 +1,7 @@
 #include "main.h"
 
+
+
 /**
  * _printchar - prints character
  *
@@ -75,6 +77,7 @@ void _printint(void)
 		id.count++;
 	}
 }
+
 /**
  * _printf - produces output according to a format
  * @format: character string
